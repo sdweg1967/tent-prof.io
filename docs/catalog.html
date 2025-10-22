@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог продукции - Тент-Проф</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <!-- Верхняя плашка -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="header-center">
+                <span class="telandadres">ТЕНТ-ПРОФ.РФ</span>
+            </div>
+            <div class="header-right">
+                <div class="header-contacts">
+                    <span>Телефон: +7 (XXX) XXX-XX-XX</span>
+                    <span>Email: info@тент-проф.рф</span>
+                </div>
+                <a href="https://t.me/PoloGiTent" class="telegram-btn" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.191l-1.83 8.725c-.134.625-.478.78-.97.486l-4.05-2.989-1.955 1.879c-.215.215-.395.395-.81.395l.291-4.104 7.506-6.787c.325-.29-.07-.448-.51-.161l-9.26 5.827-3.98-1.248c-.645-.204-.658-.645.136-.954l15.455-5.948c.538-.233 1.006.139.832.941z" />
+                    </svg>
+                    Мы в Telegram
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка для открытия/закрытия меню -->
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Выдвижное меню -->
+    <nav class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="logo">
+                <h1>ТЕНТ-ПРОФ.РФ</h1>
+
+            </div>
+            <button class="close-menu" id="closeMenu">&times;</button>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Главная</a></li>
+            <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+            <li><a href="index.html#delivery" class="nav-link">Доставка и оплата</a></li>
+            <li><a href="index.html#promotion" class="nav-link">Акции</a></li>
+            <li><a href="index.html#map" class="nav-link">Мы на карте</a></li>
+            <li><a href="index.html#contacts" class="nav-link">Контакты</a></li>
+            <li><a href="index.html#about" class="nav-link">О компании</a></li>
+        </ul>
+
+        <div class="menu-footer">
+            <div class="contact-info">
+                <p>+7 (XXX) XXX-XX-XX</p>
+                <p>info@тент-проф.рф</p>
+                <p>г. Санкт-Петербург, ул. Профессора Качалова, д.3</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Затемнение фона при открытом меню -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Кнопка "Наверх" -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </div>
+
+    <main>
+        <!-- Секция каталога -->
+        <section class="catalog">
+            <div class="catalog-navigation">
+                <a href="index.html" class="back-to-home">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 12H5m7 7l-7-7 7-7" />
+                    </svg>
+                    Вернуться на главную
+                </a>
+            </div>
+
+            <div class="catalog-header">
+                <h2>Каталог продукции</h2>
+                <p>Широкий ассортимент тентовых материалов и конструкций</p>
+            </div>
+
+            <!-- Поиск и фильтры -->
+            <div class="catalog-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Поиск по каталогу...">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </div>
+
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="categoryFilter">Категория:</label>
+                        <select id="categoryFilter">
+                            <option value="all">Все категории</option>
+                            <option value="canvas">Пологи и тенты из брезента</option>
+                            <option value="pvc">Пологи и тенты из ПВХ</option>
+                            <option value="tarpaulin">Пологи и тенты из тарпаулина</option>
+                            <option value="oxford">Пологи и тенты из Оксфорда</option>
+                            <option value="thermal">Пологи и тенты утепленные</option>
+                            <option value="pvc_thermal">Термоматы ПВХ</option>
+                            <option value="tarpaulin_thermal">Термоматы тарпаулин</option>
+                            <option value="facade_mesh">Сетка фасадная</option>
+                            <option value="arm_cat">Пологи и тенты из армированной пленки</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sortFilter">Сортировка:</label>
+                        <select id="sortFilter">
+                            <option value="default">По умолчанию</option>
+                            <option value="name_asc">По названию (А-Я)</option>
+                            <option value="name_desc">По названию (Я-А)</option>
+                            <option value="popular">Популярные</option>
+                            <option value="new">Новинки</option>
+                        </select>
+                    </div>
+
+                    <button id="resetFilters" class="filter-reset">Сбросить фильтры</button>
+                </div>
+            </div>
+
+            <!-- Сетка товаров -->
+            <div class="product-grid" id="productGrid">
+                <!-- Товары будут загружены через JavaScript -->
+            </div>
+
+            <!-- Индикатор загрузки -->
+            <div id="loadingIndicator" class="loading-indicator">
+                <div class="loading-spinner"></div>
+                <p>Загрузка товаров...</p>
+            </div>
+
+            <!-- Сообщение, если товары не найдены -->
+            <div id="noProductsMessage" class="no-products-message" style="display: none;">
+                <h3>Товары не найдены</h3>
+                <p>Попробуйте изменить параметры поиска или фильтры</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer id="contacts">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Контакты</h3>
+                <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+                <p>Email: info@тент-проф.рф</p>
+                <p>Адрес: г. Санкт-Петербург, ул. Профессора Качалова, д.3</p>
+            </div>
+
+            <div class="work-info">
+                <h3>Условия работы</h3>
+                <p>Отгрузка от 10 000 руб.</p>
+                <p>Только для юр. лиц и ИП</p>
+                <p>Доставка по всей России</p>
+            </div>
+        </div>
+
+        <!-- Кнопка Telegram в футере по центру -->
+        <div class="footer-telegram">
+            <a href="https://t.me/PoloGiTent" class="telegram-btn-footer" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.191l-1.83 8.725c-.134.625-.478.78-.97.486l-4.05-2.989-1.955 1.879c-.215.215-.395.395-.81.395l.291-4.104 7.506-6.787c.325-.29-.07-.448-.51-.161l-9.26 5.827-3.98-1.248c-.645-.204-.658-.645.136-.954l15.455-5.948c.538-.233 1.006.139.832.941z" />
+                </svg>
+                Мы в Telegram
+            </a>
+        </div>
+
+        <!-- Копирайт -->
+        <div class="copyright">
+            <p>&copy; 2025 ТЕНТ-ПРОФ.РФ. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Подключение основного скрипта -->
+    <script src="scripts/script.js"></script>
+
+    <!-- Скрипт для работы каталога -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Данные товаров
+            const products = [
+                // Товары из брезента
+                {
+                    id: 1,
+                    name: "Пологи и тенты из брезента",
+                    description: "Прочные и надежные брезентовые решения для защиты грузов от непогоды. Отличная износостойкость и водонепроницаемость.",
+                    category: "canvas",
+                    image: "images/brezent.jpg",
+                    inStock: true,
+                    order: 1,
+                    isPopular: true,
+                    isNew: false
+                },
+                {
+                    id: 2,
+                    name: "Пологи и тенты из ПВХ",
+                    description: "Водонепроницаемые ПВХ тенты для любых погодных условий. Высокая прочность и устойчивость к УФ-излучению.",
+                    category: "pvc",
+                    image: "images/pvx.jpg",
+                    inStock: true,
+                    order: 2,
+                    isPopular: false,
+                    isNew: true
+                },
+                {
+                    id: 3,
+                    name: "Пологи и тенты из тарпаулина",
+                    description: "Легкие и практичные тарпаулиновые тенты. Идеальное сочетание цены и качества для временных укрытий.",
+                    category: "tarpaulin",
+                    image: "images/trp.jpg",
+                    inStock: true,
+                    order: 3,
+                    isPopular: true,
+                    isNew: false
+                },
+
+                // Товары из ПВХ
+                {
+                    id: 4,
+                    name: "Пологи и тенты из Оксфорда",
+                    description: "Легкие и износостойкие тенты из ткани Оксфорд. Быстро сохнут, устойчивы к механическим повреждениям.",
+                    category: "oxford",
+                    image: "images/ox.jpg",
+                    inStock: true,
+                    order: 4,
+                    isPopular: true,
+                    isNew: true
+                },
+                {
+                    id: 5,
+                    name: "Пологи и тенты утепленные",
+                    description: "Трехслойные утепленные тенты с теплоизоляцией. Защищают грузы от перепадов температур и замерзания.",
+                    category: "thermal",
+                    image: "images/trm.jpg",
+                    inStock: true,
+                    order: 5,
+                    isPopular: false,
+                    isNew: false
+                },
+                {
+                    id: 6,
+                    name: "Термоматы ПВХ",
+                    description: "Термоизоляционные маты из ПВХ для особо ответственных грузов. Надежная защита от конденсата и холода.",
+                    category: "pvc_thermal",
+                    image: "images/trmpvx.jpg",
+                    inStock: true,
+                    order: 6,
+                    isPopular: true,
+                    isNew: false
+                },
+
+                {
+                    id: 7,
+                    name: "Термоматы тарпаулин",
+                    description: "Легкие термоматы из тарпаулина с утеплением. Эффективная теплоизоляция для различных видов грузов.",
+                    category: "tarpaulin_thermal",
+                    image: "images/trmt.jpg",
+                    inStock: true,
+                    order: 7,
+                    isPopular: true,
+                    isNew: false
+                },
+                {
+                    id: 8,
+                    name: "Пологи и тенты из армированной пленки",
+                    description: "Прочные тенты из армированной полиэтиленовой пленки. Устойчивы к проколам и разрывам, долговечны.",
+                    category: "arm_cat",
+                    image: "images/arm.jpg",
+                    inStock: true,
+                    order: 8,
+                    isPopular: false,
+                    isNew: true
+                },
+                {
+                    id: 9,
+                    name: "Сетка фасадная",
+                    description: "Защитная фасадная сетка для строительных объектов. Предохраняет от падения инструментов, создает затемнение.",
+                    category: "facade_mesh",
+                    image: "images/fs.jpg",
+                    inStock: true,
+                    order: 9,
+                    isPopular: true,
+                    isNew: false
+                }
+            ];
+            // Элементы DOM
+            const productGrid = document.getElementById('productGrid');
+            const searchInput = document.getElementById('searchInput');
+            const categoryFilter = document.getElementById('categoryFilter');
+            const sortFilter = document.getElementById('sortFilter');
+            const resetFiltersBtn = document.getElementById('resetFilters');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const noProductsMessage = document.getElementById('noProductsMessage');
+
+            // Функция сортировки товаров
+            function sortProducts(productsToSort, sortType) {
+                const sortedProducts = [...productsToSort];
+
+                switch (sortType) {
+                    case 'name_asc':
+                        return sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+                    case 'name_desc':
+                        return sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+                    case 'popular':
+                        return sortedProducts.sort((a, b) => {
+                            if (a.isPopular && !b.isPopular) return -1;
+                            if (!a.isPopular && b.isPopular) return 1;
+                            return a.order - b.order;
+                        });
+                    case 'new':
+                        return sortedProducts.sort((a, b) => {
+                            if (a.isNew && !b.isNew) return -1;
+                            if (!a.isNew && b.isNew) return 1;
+                            return a.order - b.order;
+                        });
+                    case 'default':
+                    default:
+                        return sortedProducts.sort((a, b) => a.order - b.order);
+                }
+            }
+
+            // Отображение товаров
+            function displayProducts(productsToShow) {
+                productGrid.innerHTML = '';
+
+                if (productsToShow.length === 0) {
+                    noProductsMessage.style.display = 'block';
+                    return;
+                }
+
+                noProductsMessage.style.display = 'none';
+
+                productsToShow.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.setAttribute('data-category', product.category);
+
+                    // Добавляем бейджи для популярных и новых товаров
+                    let badges = '';
+                    if (product.isPopular) badges += '<div class="product-badge popular">Популярный</div>';
+                    if (product.isNew) badges += '<div class="product-badge new">Новинка</div>';
+
+                    productCard.innerHTML = `
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
+                    ${badges}
+                    ${!product.inStock ? '<div class="out-of-stock">Нет в наличии</div>' : ''}
+                </div>
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+            `;
+
+                    productGrid.appendChild(productCard);
+                });
+            }
+
+            // Фильтрация и сортировка товаров
+            function filterProducts() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const categoryValue = categoryFilter.value;
+                const sortValue = sortFilter.value;
+
+                const filteredProducts = products.filter(product => {
+                    const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
+                        product.description.toLowerCase().includes(searchTerm);
+                    const matchesCategory = categoryValue === 'all' || product.category === categoryValue;
+
+                    return matchesSearch && matchesCategory;
+                });
+
+                // Сортируем товары
+                const sortedProducts = sortProducts(filteredProducts, sortValue);
+
+                // Имитация загрузки
+                loadingIndicator.style.display = 'flex';
+                setTimeout(() => {
+                    loadingIndicator.style.display = 'none';
+                    displayProducts(sortedProducts);
+                }, 500);
+            }
+
+            // Сброс фильтров
+            function resetFilters() {
+                searchInput.value = '';
+                categoryFilter.value = 'all';
+                sortFilter.value = 'default';
+                filterProducts();
+            }
+
+            // Инициализация
+            function initCatalog() {
+                // Показываем индикатор загрузки
+                loadingIndicator.style.display = 'flex';
+
+                // Имитируем загрузку данных
+                setTimeout(() => {
+                    loadingIndicator.style.display = 'none';
+                    displayProducts(sortProducts(products, 'default'));
+                }, 1000);
+
+                // Навешиваем обработчики событий
+                searchInput.addEventListener('input', filterProducts);
+                categoryFilter.addEventListener('change', filterProducts);
+                sortFilter.addEventListener('change', filterProducts);
+                resetFiltersBtn.addEventListener('click', resetFilters);
+
+                /* Обработчик клика по карточке товара
+                productGrid.addEventListener('click', function (e) {
+                    const productCard = e.target.closest('.product-card');
+                    if (productCard) {
+                        const productName = productCard.querySelector('h3').textContent;
+                        alert(`Товар: ${productName}\n\nНаш менеджер свяжется с вами для уточнения деталей.`);
+                    }
+                });
+                */
+            }
+
+            // Запуск инициализации
+            initCatalog();
+        });
+    </script>
+
+    <!-- Дополнительные стили для каталога -->
+    <style>
+        .catalog {
+            padding: 80px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .catalog-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .catalog-header h2 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+
+        .catalog-header p {
+            font-size: 1.2em;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .catalog-controls {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-end;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: white;
+            font-size: 1em;
+        }
+
+        .search-box svg {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: flex-end;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .filter-group select {
+            padding: 10px 15px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: white;
+            min-width: 150px;
+        }
+
+        .filter-reset {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .filter-reset:hover {
+            background: #666;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .out-of-stock {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8em;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.7em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .product-badge.popular {
+            background: #FF9800;
+        }
+
+        .product-badge.new {
+            background: #4CAF50;
+        }
+
+        .product-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            min-height: 2.8em;
+        }
+
+        .product-card p {
+            color: #ccc;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            min-height: 4.2em;
+        }
+
+        .loading-indicator {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #333;
+            border-top: 5px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .no-products-message {
+            text-align: center;
+            padding: 60px 20px;
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        .no-products-message h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+
+        .no-products-message p {
+            color: #ccc;
+            font-size: 1.1em;
+        }
+
+        /* Стили для навигации в каталоге */
+        .catalog-navigation {
+            margin-bottom: 20px;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .catalog-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: 100%;
+            }
+
+            .filters {
+                width: 100%;
+            }
+
+            .filter-group {
+                flex: 1;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .catalog {
+                padding: 70px 15px 30px;
+            }
+
+            .catalog-header h2 {
+                font-size: 2em;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filters {
+                flex-direction: column;
+            }
+
+            .filter-group {
+                width: 100%;
+            }
+        }
+    </style>
+<!-- 
+Разработчик: Максим
+Дата создания: 22.10.2025
+Проект: Тент-Проф
+-->
+</body>
+
+</html>

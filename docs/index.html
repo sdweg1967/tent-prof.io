@@ -1,0 +1,270 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тент-Проф - Профессиональные тентовые конструкции</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+   <!-- Верхняя плашка -->
+<div class="top-bar">
+    <div class="container">
+        <div class="header-center">
+            <span class="telandadres">ТЕНТ-ПРОФ.РФ</span>
+        </div>
+        <div class="header-right">
+            <div class="header-contacts">
+                <span>Телефон: +7 (XXX) XXX-XX-XX</span>
+                <span>Email: info@тент-проф.рф</span>
+            </div>
+            <a href="https://t.me/PoloGiTent" class="telegram-btn" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.191l-1.83 8.725c-.134.625-.478.78-.97.486l-4.05-2.989-1.955 1.879c-.215.215-.395.395-.81.395l.291-4.104 7.506-6.787c.325-.29-.07-.448-.51-.161l-9.26 5.827-3.98-1.248c-.645-.204-.658-.645.136-.954l15.455-5.948c.538-.233 1.006.139.832.941z"/>
+                </svg>
+                Мы в Telegram
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!-- Кнопка для открытия/закрытия меню -->
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Выдвижное меню -->
+    <nav class="slide-menu" id="slideMenu">
+        <div class="menu-header">
+            <div class="logo">
+                <h1>ТЕНТ-ПРОФ.РФ</h1>
+            </div>
+            <button class="close-menu" id="closeMenu">&times;</button>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link">Главная</a></li>
+            <li><a href="catalog.html" class="nav-link">Каталог</a></li>
+            <li><a href="#delivery" class="nav-link">Доставка и оплата</a></li>
+            <li><a href="#promotion" class="nav-link">Акции</a></li>
+            <li><a href="#map" class="nav-link">Мы на карте</a></li>
+            <li><a href="#contacts" class="nav-link">Контакты</a></li>
+            <li><a href="#about" class="nav-link">О компании</a></li>
+        </ul>
+
+        <div class="menu-footer">
+            <div class="contact-info">
+                <p>+7 (XXX) XXX-XX-XX</p>
+                <p>info@тент-проф.рф</p>
+                <p>г. Санкт-Петербург, ул. Профессора Качалова, д.3</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Затемнение фона при открытом меню -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Кнопка "Наверх" -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </div>
+
+    <main>
+       <!-- Герой секция с фоновым изображением -->
+<section id="home" class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero.jpg');">
+    <div class="hero-content">
+        <h2>Профессиональные тентовые решения</h2>
+        <p>Ваши грузы под надёжной защитой! Производим тенты, тарпаулины и термоматы, которые не боятся ни солнца, ни дождя, ни ударов.</p>
+        <a href="catalog.html" class="cta-button">Перейти в каталог</a>
+    </div>
+</section>
+
+<!-- Продукты с реальными изображениями -->
+<section id="products" class="products">
+    <h2>Наша продукция</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/1pr.jpg" alt="Тенты Тарпаулин" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
+            </div>
+            <h3>Тенты Тарпаулин и ткань Тарпаулин в рулонах</h3>
+            <p>Прочные укрывные материалы для строительства и сельского хозяйства</p>
+            <a href="catalog.html?category=tarpaulin" class="product-btn">Подробнее</a>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/pr2.jpg" alt="Тенты ПВХ" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
+            </div>
+            <h3>Тенты ПВХ укрывные и ткань в рулонах</h3>
+            <p>Водонепроницаемые решения для любых погодных условий</p>
+            <a href="catalog.html?category=pvc" class="product-btn">Подробнее</a>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/brezent.jpg" alt="Тенты из брезента" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
+            </div>
+            <h3>Тенты и пологи из брезента и брезентовая ткань в рулонах</h3>
+            <p>Классические надежные решения проверенные временем</p>
+            <a href="catalog.html?category=canvas" class="product-btn">Подробнее</a>
+        </div>
+    </div>
+    <div class="products-footer">
+        <a href="catalog.html" class="view-all-btn">Смотреть весь каталог</a>
+    </div>
+</section>
+
+<!-- Остальные секции остаются без изменений -->
+<section id="gallery" class="gallery">
+    <h2>Наши работы</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="images/gallery.jpg" alt="Наша работа 1" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery2.jpg" alt="Наша работа 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery3.jpg" alt="Наша работа 3" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery4.jpg" alt="Наша работа 4" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery5.jpg" alt="Наша работа 5" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery6.jpg" alt="Наша работа 6" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery7.jpg" alt="Наша работа 7" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="gallery-item">
+            <img src="images/gallery8.jpg" alt="Наша работа 8" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+    </div>
+</section>
+
+<!-- Остальные секции (about, delivery, promotion, map) остаются без изменений -->
+        <section id="about" class="about">
+            <h2>О компании</h2>
+            <div class="about-content">
+                <div class="about-section">
+                    <h3>История</h3>
+                    <p>Компания «Тент-Проф» с 2004 года занимается изготовлением и оптовой реализацией различных укрывных и защитных изделий из брезента, ПВХ, тарпаулина, фасадной сетки, армированной плёнки и других материалов по всей территории России и СНГ.</p>
+                    <p>Наше швейное производство оснащено современным оборудованием и укомплектовано квалифицированными специалистами. За 20 лет на рынке мы создали три производственных площадки и добились отличных результатов в качестве и обслуживании.</p>
+                </div>
+                <div class="about-section">
+                    <h3>Что мы можем?</h3>
+                    <p>Мы можем изготовить всё, что имеет отношение к производству тентов, пологов, летних кафе и автотентов, павильонов, чехлов для автотехники и всевозможных укрывных материалов любой сложности и практически любых размеров.</p>
+                    <p>Особенное внимание мы уделяем качеству швов и прочностным характеристикам изделий. С удовольствием принимаем заказы на нестандартные изделия со специфическими требованиями.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="delivery" class="delivery">
+            <h2>Доставка и оплата</h2>
+            <div class="delivery-content">
+                <div class="delivery-info">
+                    <h3>Условия работы</h3>
+                    <ul>
+                        <li>Товар отгружается от суммы 10 000 руб.</li>
+                        <li>Работаем только с юридическими лицами и индивидуальными предпринимателями</li>
+                        <li>Бесплатная доставка по Санкт-Петербургу при заказе от 20 000 рублей</li>
+                    </ul>
+                </div>
+                <div class="delivery-partners">
+                    <h3>Транспортные компании</h3>
+                    <p>Сотрудничаем с крупнейшими транспортными компаниями России:</p>
+                    <div class="partners-list">
+                        <span>Деловые линии</span>
+                        <span>ПЭК</span>
+                        <span>Байкал Сервис</span>
+                    </div>
+                    <p>Наши специалисты помогут выбрать оптимальный способ доставки в ваш регион.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Новая секция: Акция -->
+        <section id="promotion" class="promotion">
+            <h2>Акция «Бесплатная доставка»</h2>
+            <div class="promotion-content">
+                <div class="promotion-card">
+                    <h3>Условия акции:</h3>
+                    <ul>
+                        <li>Участвуют товары, отмеченные значком «Бесплатная доставка»</li>
+                        <li>Бесплатная доставка по Санкт-Петербургу в пределах КАД</li>
+                        <li>Или доставка до терминала ТК "Деловые Линии" за наш счёт</li>
+                        <li>Или скидка 1000 рублей на товар</li>
+                        <li>Доставка в течение 7 дней после оплата</li>
+                        <li>Акция не распространяется на гарантийный ремонт</li>
+                    </ul>
+                    <div class="promotion-note">
+                        <p>Подробности уточняйте у наших менеджеров!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Новая секция: Карта -->
+        <section id="map" class="map-section">
+            <h2>Мы на карте</h2>
+            <div class="map-container">
+                <div class="map-iframe-container">
+                    <iframe 
+                        src="https://yandex.ru/map-widget/v1/?ll=30.338223,59.944925&z=16&pt=30.338223,59.944925,pm2rdm&mode=search&text=г.%20Санкт-Петербург,%20ул.%20Профессора%20Качалова,%20д.3" 
+                        width="100%" 
+                        height="400" 
+                        frameborder="0" 
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+                <div class="map-address">
+                    <p><strong>Наш адрес:</strong> г. Санкт-Петербург, ул. Профессора Качалова, д.3</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer id="contacts">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Контакты</h3>
+                <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+                <p>Email: info@тент-проф.рф</p>
+                <p>Адрес: г. Санкт-Петербург, ул. Профессора Качалова, д.3</p>
+            </div>
+            
+            <div class="work-info">
+                <h3>Условия работы</h3>
+                <p>Отгрузка от 10 000 руб.</p>
+                <p>Только для юр. лиц и ИП</p>
+                <p>Доставка по всей России</p>
+            </div>
+        </div>
+        
+        <!-- Кнопка Telegram в футере по центру -->
+        <div class="footer-telegram">
+            <a href="https://t.me/PoloGiTent" class="telegram-btn-footer" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.191l-1.83 8.725c-.134.625-.478.78-.97.486l-4.05-2.989-1.955 1.879c-.215.215-.395.395-.81.395l.291-4.104 7.506-6.787c.325-.29-.07-.448-.51-.161l-9.26 5.827-3.98-1.248c-.645-.204-.658-.645.136-.954l15.455-5.948c.538-.233 1.006.139.832.941z"/>
+                </svg>
+                Мы в Telegram
+            </a>
+        </div>
+
+        <!-- Копирайт -->
+        <div class="copyright">
+            <p>&copy; 2025 ТЕНТ-ПРОФ.РФ. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
